@@ -10,28 +10,30 @@ This directory contains samples for Cloud Bigtable, which may be used as a refer
 Samples, quickstarts, and other documentation available for this product is available at <a href="https://cloud.google.com/bigtable">the product documentation.</a>.
 
 
-
 ### Quickstart
 
 Example sample for product
- <a href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/python-bigtable&page=editor&open_in_editor=quickstart.py"><img alt="Open in Cloud Shell" src="http://gstatic.com/cloudssh/images/open-btn.png"> 
+
+
+<a href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/python-bigtable&page=editor&open_in_editor=quickstart.py"><img alt="Open in Cloud Shell" src="http://gstatic.com/cloudssh/images/open-btn.png"> 
 </a>
 
 To run this sample:
 
 1. If this is your first time working with GCP products, you will need to set up [the Cloud SDK][cloud_sdk] or utilize [Google Cloud Shell][gcloud_shell]. This sample may [require authetication][authentication] and you will need to [enable billing][enable_billing].
 
-1. Make a fork of this repo and clone it locally, then navigate to the sample directory you want to use.
+1. Make a fork of this repo and clone the branch locally, then navigate to the sample directory you want to use.
 
 1. Install the dependencies needed to run the samples.
-```bash
-    $ pip install -r requirements.txt
-```
+        ```bash
+            $ pip install -r requirements.txt
+        ```
 
 1. Run the sample using
-```bash
-    $ python quickstart.py
-```
+        ```bash
+            $ python quickstart.py
+        ```
+
 
 This is custom text for the sample
 
@@ -58,4 +60,5 @@ For [contributing guidelines][contrib_guide], the [Python style guide][py_style]
 [contrib_guide]: https://github.com/googleapis/google-cloud-python/blob/master/CONTRIBUTING.rst
 [py_style]: http://google.github.io/styleguide/pyguide.html
 [cloud_sdk]: https://cloud.google.com/sdk/docs
+[gcloud_shell]: https://cloud.google.com/shell/docs
 [gcloud_shell]: https://cloud.google.com/shell/docs
