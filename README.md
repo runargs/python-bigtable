@@ -30,7 +30,7 @@ To run this sample:
         ```
 
 1. Run the sample using
-        ```bash
+        ```
             $ python quickstart.py
         ```
 
