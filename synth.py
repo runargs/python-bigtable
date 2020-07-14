@@ -24,62 +24,62 @@ common = gcp.CommonTemplates()
 # ----------------------------------------------------------------------------
 # Generate bigtable and bigtable_admin GAPIC layer
 # ----------------------------------------------------------------------------
-library = gapic.py_library(
-    service="bigtable",
-    version="v2",
-    bazel_target="//google/bigtable/v2:bigtable-v2-py",
-    include_protos=True,
-)
+# library = gapic.py_library(
+#     service="bigtable",
+#     version="v2",
+#     bazel_target="//google/bigtable/v2:bigtable-v2-py",
+#     include_protos=True,
+# )
 
-s.move(library / "google/cloud/bigtable_v2")
-s.move(library / "tests")
+# s.move(library / "google/cloud/bigtable_v2")
+# s.move(library / "tests")
 
-# Generate admin client
-library = gapic.py_library(
-    service="bigtable_admin",
-    version="v2",
-    bazel_target="//google/bigtable/admin/v2:bigtable-admin-v2-py",
-    include_protos=True,
-)
+# # Generate admin client
+# library = gapic.py_library(
+#     service="bigtable_admin",
+#     version="v2",
+#     bazel_target="//google/bigtable/admin/v2:bigtable-admin-v2-py",
+#     include_protos=True,
+# )
 
-s.move(library / "google/cloud/bigtable_admin_v2")
-s.move(library / "tests")
+# s.move(library / "google/cloud/bigtable_admin_v2")
+# s.move(library / "tests")
 
-s.replace(
-    [
-        "google/cloud/bigtable_admin_v2/gapic/bigtable_instance_admin_client.py",
-        "google/cloud/bigtable_admin_v2/gapic/bigtable_table_admin_client.py",
-    ],
-    "'google-cloud-bigtable-admin'",
-    "'google-cloud-bigtable'",
-)
+# s.replace(
+#     [
+#         "google/cloud/bigtable_admin_v2/gapic/bigtable_instance_admin_client.py",
+#         "google/cloud/bigtable_admin_v2/gapic/bigtable_table_admin_client.py",
+#     ],
+#     "'google-cloud-bigtable-admin'",
+#     "'google-cloud-bigtable'",
+# )
 
-s.replace(
-    "google/**/*.py",
-    "from google\.cloud\.bigtable\.admin_v2.proto",
-    "from google.cloud.bigtable_admin_v2.proto",
-)
+# s.replace(
+#     "google/**/*.py",
+#     "from google\.cloud\.bigtable\.admin_v2.proto",
+#     "from google.cloud.bigtable_admin_v2.proto",
+# )
 
-s.replace(
-    ["google/cloud/bigtable_admin_v2/__init__.py"],
-    "    __doc__ = bigtable_instance_admin_client."
-    "BigtableInstanceAdminClient.__doc__\n",
-    "    __doc__ = (\n"
-    "        bigtable_instance_admin_client.BigtableInstanceAdminClient."
-    "__doc__)\n",
-)
+# s.replace(
+#     ["google/cloud/bigtable_admin_v2/__init__.py"],
+#     "    __doc__ = bigtable_instance_admin_client."
+#     "BigtableInstanceAdminClient.__doc__\n",
+#     "    __doc__ = (\n"
+#     "        bigtable_instance_admin_client.BigtableInstanceAdminClient."
+#     "__doc__)\n",
+# )
 
-s.replace(
-    ["google/cloud/bigtable_v2/gapic/bigtable_client.py"],
-    "if ``true_mutations`` is empty, and at most\n\n\s*100000.",
-    "if ``true_mutations`` is empty, and at most 100000.",
-)
+# s.replace(
+#     ["google/cloud/bigtable_v2/gapic/bigtable_client.py"],
+#     "if ``true_mutations`` is empty, and at most\n\n\s*100000.",
+#     "if ``true_mutations`` is empty, and at most 100000.",
+# )
 
-s.replace(
-    ["google/cloud/bigtable_v2/gapic/bigtable_client.py"],
-    "if ``false_mutations`` is empty, and at most\n\n\s*100000.",
-    "if ``false_mutations`` is empty, and at most 100000.",
-)
+# s.replace(
+#     ["google/cloud/bigtable_v2/gapic/bigtable_client.py"],
+#     "if ``false_mutations`` is empty, and at most\n\n\s*100000.",
+#     "if ``false_mutations`` is empty, and at most 100000.",
+# )
 
 # ----------------------------------------------------------------------------
 # Add templated files
@@ -91,6 +91,9 @@ s.move(templated_files, excludes=['noxfile.py'])
 # Samples templates
 # ----------------------------------------------------------------------------
 
-python.py_samples(skip_readmes=True)
+# python.py_samples(skip_readmes=True)
+
+sample_files = common.py_samples(unit_cov_level=97, cov_level=99, samples=True)
+s.move(sample_files, excludes=['noxfile.py'])
 
 s.shell.run(["nox", "-s", "blacken"], hide_output=False)
