@@ -1,13 +1,10 @@
 [//]: # "This README.md file is auto-generated, all changes to this file will be lost."
 [//]: # "To regenerate it, use `python -m synthtool`."
 
-## Python Sample Folder for Cloud Bigtable 
+## Python Samples for Cloud Bigtable
 
-This directory contains samples for Cloud Bigtable, which may be used as a refererence for how to use this product. 
-
-## Samples
-
-Samples, quickstarts, and other documentation available for this product is available at <a href="https://cloud.google.com/bigtable">the product documentation.</a>
+This directory contains samples for Cloud Bigtable, which may be used as a refererence for how to use Cloud Bigtable. 
+Samples, quickstarts, and other documentation are available at <a href="https://cloud.google.com/bigtable">cloud.google.com</a>.
 
 
 ### Quickstart
@@ -25,14 +22,12 @@ To run this sample:
 1. Make a fork of this repo and clone the branch locally, then navigate to the sample directory you want to use.
 
 1. Install the dependencies needed to run the samples.
-        ```
-            $ pip install -r requirements.txt
-        ```
+
+        `pip install -r requirements.txt`
 
 1. Run the sample using
-        ```
-            $ python quickstart.py
-        ```
+
+        `python quickstart.py`
 
 
 This is custom text for the sample
@@ -45,12 +40,12 @@ Example beginner application
 
 ## Additional Information
 
-This sample uses the [Google Cloud Client Library for Python][client_library_python].
+These samples use the [Google Cloud Client Library for Python][client_library_python].
 You can read the documentation for more details on API usage and use GitHub
 to [browse the source][source] and [report issues][issues].
 
 ### Contributing
-For [contributing guidelines][contrib_guide], the [Python style guide][py_style], and more information on prerequisite steps to contribute, view the product source code at <a href="https://github.com/googleapis/python-bigtable">googleapis/python-bigtable</a>.
+For [contributing guidelines][contrib_guide], the [Python style guide][py_style], and more information on prerequisite steps to contribute, view the source code at <a href="https://github.com/googleapis/python-bigtable">googleapis/python-bigtable</a>.
 
 [authentication]: https://cloud.google.com/docs/authentication/getting-started
 [enable_billing]:https://cloud.google.com/apis/docs/getting-started#enabling_billing
