@@ -23,11 +23,11 @@ To run this sample:
 
 1. Install the dependencies needed to run the samples.
 
-        `pip install -r requirements.txt`
+        pip install -r requirements.txt
 
 1. Run the sample using
 
-        `python quickstart.py`
+        python quickstart.py
 
 
 This is custom text for the sample
